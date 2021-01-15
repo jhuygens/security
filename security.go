@@ -1,12 +1,14 @@
 package security
 
 import (
+	"encoding/json"
 	"fmt"
 	"strconv"
 	"strings"
 	"time"
 
 	"github.com/jgolang/config"
+	"github.com/jgolang/log"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -117,4 +119,14 @@ func ValidateAccessToken(token string) (string, bool, error) {
 		return "", false, nil
 	}
 	return values[0], true, nil
+}
+
+// ValidateAccessTokenFunc doc ...
+func ValidateAccessTokenFunc(token string) (json.RawMessage, bool) {
+	tokenData, valid, err := ValidateAccessToken(token)
+	if err != nil {
+		log.Error(err)
+		return nil, false
+	}
+	return []byte(tokenData), valid
 }
