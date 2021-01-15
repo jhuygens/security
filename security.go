@@ -104,7 +104,10 @@ func ValidateAccessToken(token string) (string, bool, error) {
 		return "", false, err
 	}
 	values := strings.Split(string(decriptedToken), ";")
-	expire, err := strconv.ParseFloat(values[3], 64)
+	if len(values) < 3 {
+		return "", true, fmt.Errorf("No decript hash")
+	}
+	expireSecDuration, err := strconv.ParseFloat(values[3], 64)
 	if err != nil {
 		return "", false, err
 	}
@@ -112,10 +115,9 @@ func ValidateAccessToken(token string) (string, bool, error) {
 	if err != nil {
 		return "", false, err
 	}
-	tokenCreatedAt := time.Unix(timestamp, 0)
-	expireDuration := expire * 60.0
-	tokenDuration := time.Since(tokenCreatedAt).Minutes()
-	if tokenDuration >= expireDuration {
+	tokenCreatedAt := time.Unix(timestamp/1000000000, 0)
+	tokenSecDuration := time.Since(tokenCreatedAt).Seconds()
+	if tokenSecDuration >= expireSecDuration {
 		return "", false, nil
 	}
 	return values[0], true, nil
