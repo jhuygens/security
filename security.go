@@ -56,6 +56,9 @@ func ValidateSecretKey(secretKey string) (bool, error) {
 		return false, err
 	}
 	values := strings.Split(string(decriptedSecretKey), ";")
+	if len(values) < 4 {
+		return false, fmt.Errorf("No decript hash")
+	}
 	expire, err := strconv.ParseFloat(values[4], 64)
 	if err != nil {
 		return false, err
@@ -105,7 +108,7 @@ func ValidateAccessToken(token string) (string, bool, error) {
 	}
 	values := strings.Split(string(decriptedToken), ";")
 	if len(values) < 3 {
-		return "", true, fmt.Errorf("No decript hash")
+		return "", false, fmt.Errorf("No decript hash")
 	}
 	expireSecDuration, err := strconv.ParseFloat(values[3], 64)
 	if err != nil {
