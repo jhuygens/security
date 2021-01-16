@@ -1,9 +1,7 @@
 github.com/jgolang/config v1.0.0 h1:82b+PKhukzD3QXubdwO5kzEg+maC0IpCM22aJJfunXo=
 github.com/jgolang/config v1.0.0/go.mod h1:dk4Mr3XN9DO82mr9PrvBxBTpWhb+ii3kOTwEZsYcDUU=
-github.com/jgolang/log v1.2.3 h1:+vnyOGA5K71vgeHo7mBBy351l6ds4nv0/pbpcOgw0aA=
-github.com/jgolang/log v1.2.3/go.mod h1:P411fc8lzBwIlBjPGIkZJofX4M+GQvTaFT+o4Oa6t0M=
-github.com/jgolang/log/core v0.0.0-20210112072412-4a81cfc27ef1 h1:ylymiMw9xTYTJhSQm6fvIjHI2I18wtSftnrubgtVqwc=
-github.com/jgolang/log/core v0.0.0-20210112072412-4a81cfc27ef1/go.mod h1:yAJEmWS5nrArG/oCp7YNaJYBq04DKSs6TtcU/5VRIO4=
+github.com/jgolang/log v1.2.4 h1:8jQZEvlWmm3c2MMZH39gK2jOOmLyvMDQyBoca4m9UGo=
+github.com/jgolang/log v1.2.4/go.mod h1:ZlYeW8iaFNNLFzKFDLSbZki5N1DgvoOjiSOG5ViHpCo=
 github.com/jgolang/sirius v1.0.0 h1:rT1kSU4Ja5F4VPj1eg0qxaDWA2HxhZEKi9N+cVNfKBU=
 github.com/jgolang/sirius v1.0.0/go.mod h1:SPDEBWiXCgxbcTKXYrFMR6Zovk9QVqA5qfsyGwYQJw0=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
